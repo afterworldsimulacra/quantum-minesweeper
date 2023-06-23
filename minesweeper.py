@@ -34,7 +34,20 @@ class Minesweeper:
         self.visible_board = [["" for _ in range(width)] for _ in range(height)]
         self.mines = set()
         self.is_game_over = False
-
+    def prep_bell_state(self):
+        self.qc = QuantumCircuit(10,10)
+        i = 0
+        while i < 10:
+            if (i%2) == 0:
+              self.qc.h(i)
+            else:
+              self.qc.x(i)
+            i += 1
+        self.qc.cnot(0,1)
+        self.qc.cnot(2,3)
+        self.qc.cnot(4,5)
+        self.qc.cnot(6,7)
+        self.qc.cnot(8,9)
     def place_mines(self, start_x, start_y):
         num_placed = 0
         while num_placed < self.num_mines:
@@ -126,8 +139,14 @@ class Minesweeper:
 
     def reveal(self, x, y):
         if (x, y) in self.mines:
-            self.is_game_over = True
+            place = self.mines.index(x, y)
+            result = self.qc.measure(place)
             self.visible_board[x][y] = "X"
+            if result == 1:
+              self.is_game_over = True
+            else:
+              print("Lucky save! Keep going.")
+              self.print_board(show_all=True)
         else:
             count = self.count_adjacent_mines(x, y)
             self.visible_board[x][y] = str(count)
