@@ -152,8 +152,8 @@ class Minesweeper:
         tk.mainloop()
 
 # Usage example
-width = 9
-height = 9
+width = 8
+height = 8
 num_mines = 10
 
 game = Minesweeper(width, height, num_mines)
