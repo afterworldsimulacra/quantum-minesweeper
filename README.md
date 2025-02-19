@@ -1,6 +1,3 @@
-
-<code>-----BEGIN PGP SIGNED MESSAGE-----</code>
-
 ### Quantum Minesweeper
 for UTS Quantum Hackathon
 (code by Akira Li, Jacky Ly, Joshua Muzik and Salha Alghoraibi)
@@ -20,9 +17,3 @@ For each pair of qubit, apply the Hadamard gate to the first qubit, and the NOT 
 
 gg finished :D
 
-<code>-----BEGIN PGP SIGNATURE-----
-wnUEARYKAAYFAmds8tkAIQkQRkHzoiOurSIWIQQKKaPT9SmtnuXdXdlGQfOi
-I66tIt0IAP4uc+NVW24+O3mjCu76GdB9gPG+RSnmaTNBAlJ1atAx0QEAoKXj
-uQZyuNWgwgwDC1R9sE2iMiZ7CfNIqomj6W9c3gc=
-=MtTr
------END PGP SIGNATURE-----</code>
